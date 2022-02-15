@@ -117,6 +117,7 @@ namespace Havit.Blazor.Components.Web.Bootstrap
 				builder.AddAttribute(207, "disabled", !CascadeEnabledComponent.EnabledEffective(this));
 				int j = index;
 				builder.AddAttribute(208, "onclick", EventCallback.Factory.Create(this, () => HandleInputClick(j)));
+				builder.SetUpdatesAttributeName("checked");
 				builder.AddEventStopPropagationAttribute(209, "onclick", true);
 				builder.CloseElement(); // input
 

@@ -147,6 +147,7 @@ namespace Havit.Blazor.Components.Web.Bootstrap
 
 			builder.AddAttribute(1002, "onfocus", "this.select();"); // source: https://stackoverflow.com/questions/4067469/selecting-all-text-in-html-text-input-when-clicked
 			builder.AddAttribute(1003, "onchange", EventCallback.Factory.CreateBinder<string>(this, value => CurrentValueAsString = value, CurrentValueAsString));
+			builder.SetUpdatesAttributeName("value");
 			builder.AddEventStopPropagationAttribute(1004, "onclick", true);
 
 			// The counting sequence values violate all general recommendations.

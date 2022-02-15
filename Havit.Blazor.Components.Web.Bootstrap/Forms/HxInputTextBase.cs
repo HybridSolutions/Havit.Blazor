@@ -71,6 +71,7 @@ namespace Havit.Blazor.Components.Web.Bootstrap
 
 			builder.AddAttribute(1002, "value", FormatValueAsString(Value));
 			builder.AddAttribute(1003, BindEvent.ToEventName(), EventCallback.Factory.CreateBinder<string>(this, value => CurrentValueAsString = value, CurrentValueAsString));
+			builder.SetUpdatesAttributeName("value");
 
 			if (this.InputModeEffective is not null)
 			{

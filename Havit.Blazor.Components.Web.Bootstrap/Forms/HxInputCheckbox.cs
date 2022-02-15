@@ -44,7 +44,8 @@ namespace Havit.Blazor.Components.Web.Bootstrap
 			BuildRenderInput_AddCommonAttributes(builder, "checkbox");
 
 			builder.AddAttribute(1000, "checked", BindConverter.FormatValue(CurrentValue));
-			builder.AddAttribute(1001, "onchange", value: EventCallback.Factory.CreateBinder<bool>(this, value => CurrentValue = value, CurrentValue));
+			builder.AddAttribute(1001, "onchange", EventCallback.Factory.CreateBinder<bool>(this, value => CurrentValue = value, CurrentValue));
+			builder.SetUpdatesAttributeName("checked");
 			builder.AddEventStopPropagationAttribute(1002, "onclick", true);
 			builder.AddElementReferenceCapture(1003, elementReferece => InputElement = elementReferece);
 
